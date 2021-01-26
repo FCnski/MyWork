@@ -12,9 +12,8 @@ for i in range(100):
         memoria[i] = ' '
 
 print(memoria)
-#Aqui você deve imprimir todo o conteúdo da variável memória
 
-while(opcao != 4):
+while True:
     #Menu do programa
     print("1 - Primeira Escolha")
     print("2 - Melhor Escolha")
@@ -22,11 +21,7 @@ while(opcao != 4):
     print("4 - Sair")
     print("Escolha o algoritmo pelo numero")
     opcao = int(input())
-    print("Digite o tamanho da informacao")
-    tamanho = int(input())
-    print("Digite a letra a ser utiliada")
-    letra = input()
-
+    
     if(opcao == 1):
         aux = 0
         for i in range(len(memoria)):
@@ -36,6 +31,7 @@ while(opcao != 4):
                 if aux == tamanho:
                     for j in vetor:
                         memoria[j] = letra
+                        print("A informação foi alocada na posição: ", str(vetor), "Vetor ->", memoria)
                     break
             elif memoria[i] != ' ':
                 aux = 0
@@ -43,22 +39,18 @@ while(opcao != 4):
             else:
                 print("-------------------------Não há espaço para a informação---------------------------")
                 break
-
-        print("A informação foi alocada na posição: ", str(vetor), "Vetor ->", memoria)
-
-        #Implemente aqui a lógica da primeira escolha
         pass
     elif opcao == 2:
         aux = 0
         vetor = []
-        for cat in range(len(memoria)):
-            if memoria[cat] != 'x':
+        for i in range(len(memoria)):
+            if memoria[i] != 'x':
                 aux += 1
-                vetor.append(cat)
-            elif memoria[cat] == 'x':
-                if aux == tamanho and memoria[cat] == 'x':
-                    for dog in vetor:
-                        memoria[dog] = letra
+                vetor.append(i)
+            elif memoria[i] == 'x':
+                if aux == tamanho and memoria[i] == 'x':
+                    for j in vetor:
+                        memoria[j] = letra
                     break
                 aux = 0
                 vetor = []
@@ -88,6 +80,13 @@ while(opcao != 4):
 
 
         print("A informação foi alocada na posição: ", str(vetor2), "Vetor ->", memoria)
-
-    pass
+        
+    if(opcao == 4):
+        print("Untill next time! :D")
+        break
+    
+    print("Digite o tamanho da informacao")
+    tamanho = int(input())
+    print("Digite a letra a ser utilizada")
+    letra = input()
 
