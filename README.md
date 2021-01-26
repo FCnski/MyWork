@@ -1,2 +1,2 @@
 # MyWork
-Coisas que eu fiz e quero mostrar.
+Stuff i did using python, nothing too fancy... yet!
